@@ -17,10 +17,11 @@ export class WidgetDataService {
       )
       .pipe(
         catchError(() => {
-          console.log('Erro na requisição do serviço de tasks');
-          return throwError(
-            () => new Error('Erro ao receber os dados das tasks')
-          );
+          console.log('Erro manipulado pelo WidgetService');
+          return throwError(() => {
+            console.log('Erro relançado pelo WidgetService');
+            return new Error('Erro ao receber os dados das tasks');
+          });
         })
       );
   }

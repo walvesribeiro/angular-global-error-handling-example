@@ -1,5 +1,7 @@
 # AngularGlobalErrorHandlingExample
 
+-- See more on: [Decoded Frontend](https://www.youtube.com/watch?v=e03EHZIVJtM) by Dmytro Mezhenskyi
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.0.
 
 ## Development server

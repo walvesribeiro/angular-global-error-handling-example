@@ -31,9 +31,18 @@ export class WidgetComponent implements OnInit {
   ngOnInit(): void {
     this.tasks$ = this.widgetData.load().pipe(
       tap({
-        error: (error) => (this.error = error),
+        error: (error) => {
+          console.log(
+            'Atualizou o componente de erro e exibiu o banner de erro...'
+          );
+          this.error = error;
+        },
       }),
-      catchError((error) => of([]))
+      catchError((error) => {
+        console.log('Trocou o observable com falha por um array vazio...');
+
+        return of([]);
+      })
     );
   }
 
