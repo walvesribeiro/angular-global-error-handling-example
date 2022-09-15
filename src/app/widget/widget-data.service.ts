@@ -13,14 +13,14 @@ export class WidgetDataService {
   load() {
     return this.http
       .get<Task[]>(
-        `https://jsonplaceholder.typicode.com/todosa?_start=0&_limit=3`
+        `https://jsonplaceholder.typicode.com/todos?_start=0&_limit=6`
       )
       .pipe(
         catchError(() => {
-          console.log('Erro manipulado pelo WidgetService');
+          console.info('Erro manipulado pelo WidgetService');
           return throwError(() => {
             console.log('Erro relançado pelo WidgetService');
-            return new Error('Erro ao receber os dados das tasks');
+            return new Error('Não possivel receber os dados');
           });
         })
       );
